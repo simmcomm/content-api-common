@@ -1,0 +1,188 @@
+<?php
+
+namespace Flowly\Content\Request;
+
+use Flowly\Content\Request\Part\LicensorTrait;
+use Flowly\Content\Request\Part\LinksTrait;
+use Flowly\Content\Request\Part\OrderTrait;
+use Flowly\Content\Request\Part\ResolutionTrait;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @author Ivan Pepelko <ivan.pepelko@gmail.com>
+ */
+class GetScenesRequest
+{
+    use OrderTrait;
+    use LinksTrait;
+    use ResolutionTrait;
+    use LicensorTrait;
+
+    /**
+     * @var int[]
+     * @Assert\All({
+     *     @Assert\Type("int")
+     * })
+     */
+    private array $categories = [];
+
+    /**
+     * @var int[]
+     * @Assert\All({
+     *     @Assert\Type("int")
+     * })
+     */
+    private array $categoriesExclude = [];
+
+    /**
+     * @var int[]
+     * @Assert\All({
+     *     @Assert\Type("int")
+     * })
+     */
+    private array $actors = [];
+
+    /**
+     * @var int
+     * @Assert\PositiveOrZero()
+     */
+    private int $offset = 0;
+
+    /**
+     * @var int
+     * @Assert\Positive()
+     */
+    private int $limit = 25;
+
+    /**
+     * @var string
+     */
+    private string $rating = '>=1.0 <=10.0';
+
+    /**
+     * @return int[]
+     */
+    public function getCategories(): array
+    {
+        return $this->categories;
+    }
+
+    /**
+     * @param int[] $categories
+     *
+     * @return GetScenesRequest
+     */
+    public function setCategories(array $categories): GetScenesRequest
+    {
+        $this->categories = $categories;
+
+        return $this;
+    }
+
+    /**
+     * @return int[]
+     */
+    public function getCategoriesExclude(): array
+    {
+        return $this->categoriesExclude;
+    }
+
+    /**
+     * @param int[] $categoriesExclude
+     *
+     * @return GetScenesRequest
+     */
+    public function setCategoriesExclude(array $categoriesExclude): GetScenesRequest
+    {
+        $this->categoriesExclude = $categoriesExclude;
+
+        return $this;
+    }
+
+    /**
+     * @return int[]
+     */
+    public function getActors(): array
+    {
+        return $this->actors;
+    }
+
+    /**
+     * @param int[] $actors
+     *
+     * @return GetScenesRequest
+     */
+    public function setActors(array $actors): GetScenesRequest
+    {
+        $this->actors = $actors;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOffset(): int
+    {
+        return $this->offset;
+    }
+
+    /**
+     * @param int $offset
+     *
+     * @return GetScenesRequest
+     */
+    public function setOffset(int $offset): GetScenesRequest
+    {
+        $this->offset = $offset;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLimit(): int
+    {
+        return $this->limit;
+    }
+
+    /**
+     * @param int $limit
+     *
+     * @return GetScenesRequest
+     */
+    public function setLimit(int $limit): GetScenesRequest
+    {
+        $this->limit = $limit;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRating(): string
+    {
+        return $this->rating;
+    }
+
+    /**
+     * @param string $rating
+     *
+     * @return GetScenesRequest
+     */
+    public function setRating(string $rating): GetScenesRequest
+    {
+        $this->rating = $rating;
+
+        return $this;
+    }
+
+    public function toArray(): array
+    {
+        $keys = get_class_vars($this);
+
+        return array_combine($keys, array_map(fn(string $k) => $this->$k, $keys));
+    }
+}

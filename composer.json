@@ -1,0 +1,23 @@
+{
+    "name": "simmcomm/content-api-common",
+    "description": "Common classes for content API server and client",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Ivan Pepelko",
+            "email": "ivan.pepelko@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Flowly\\Content\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.4 | ^8.0"
+    },
+    "require-dev": {
+        "symfony/validator": "^5.2"
+    }
+}
