@@ -1,6 +1,6 @@
 {
     "name": "simmcomm/content-api-common",
-    "description": "Common classes for content API server and client",
+    "description": "Common building blocks for content API server and client",
     "type": "library",
     "license": "proprietary",
     "authors": [
