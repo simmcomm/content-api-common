@@ -36,4 +36,11 @@ class GetSceneRequest
         $this->id = $id;
     }
 
+    public function toArray(): array
+    {
+        return [
+            'imageResolution' => $this->getImageResolution(),
+            'videoResolution' => $this->getVideoResolution(),
+        ];
+    }
 }
