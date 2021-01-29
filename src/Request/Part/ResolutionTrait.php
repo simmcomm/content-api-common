@@ -11,13 +11,13 @@ trait ResolutionTrait
      * @var int
      * @Assert\Choice(choices=Constants::VIDEO_RESOLUTIONS)
      */
-    private int $videoResolution;
+    private int $videoResolution = Constants::VIDEO_RESOLUTIONS[0];
 
     /**
      * @var int
      * @Assert\Choice(choices=Constants::IMAGE_RESOLUTIONS)
      */
-    private int $imageResolution;
+    private int $imageResolution = Constants::IMAGE_RESOLUTIONS[0];
 
     /**
      * @return int
