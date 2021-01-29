@@ -11,13 +11,13 @@ trait OrderTrait
      * @var string
      * @Assert\Choice(choices=Constants::ORDER_BY_FIELDS)
      */
-    private string $orderBy;
+    private string $orderBy = 'added';
 
     /**
      * @var string
      * @Assert\Choice(choices={"asc", "desc"})
      */
-    private string $orderDir;
+    private string $orderDir = 'desc';
 
     /**
      * @return string
