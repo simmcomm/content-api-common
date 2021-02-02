@@ -23,11 +23,12 @@ class GetSceneSuggestRequestTest extends TestCase
 
     /**
      * @dataProvider provideCases
+     * @covers       \Flowly\Content\Request\GetScenesLandingRequest::toArray()
      *
      * @param GetSceneSuggestRequest $request
      * @param array                  $expected
      */
-    public function testToArray(GetSceneSuggestRequest $request, array $expected)
+    public function testToArray(GetSceneSuggestRequest $request, array $expected): void
     {
         self::assertArrayNotHasKey('id', $expected);
         self::assertSame(self::ID, $request->getId());

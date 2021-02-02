@@ -23,6 +23,7 @@ class GetScenesLandingRequestTest extends TestCase
 
     /**
      * @dataProvider provideCases
+     * @covers       \Flowly\Content\Request\GetScenesLandingRequest::toArray()
      *
      * @param GetScenesLandingRequest $request
      * @param array                   $expected
