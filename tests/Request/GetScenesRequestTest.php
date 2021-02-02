@@ -29,7 +29,7 @@ class GetScenesRequestTest extends TestCase
 
     /**
      * @dataProvider provideCases
-     * @covers       GetScenesRequest::toArray()
+     * @covers       \Flowly\Content\Request\GetScenesRequest::toArray()
      *
      * @param GetScenesRequest $request
      * @param array            $expected
