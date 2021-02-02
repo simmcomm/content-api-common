@@ -27,7 +27,7 @@ class GetSceneSuggestRequest
      * @var int
      * @Assert\Positive()
      */
-    private int $limit;
+    private int $limit = 25;
 
     public function __construct(string $id)
     {
@@ -96,7 +96,7 @@ class GetSceneSuggestRequest
 
     public function toArray(): array
     {
-        $keys = array_filter(get_class_vars(self::class), static fn(string $k) => $k !== 'id');
+        $keys = array_filter(array_keys(get_class_vars(self::class)), static fn(string $k) => $k !== 'id');
 
         return array_combine($keys, array_map(fn(string $k) => $this->$k, $keys));
     }
