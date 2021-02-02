@@ -43,7 +43,7 @@ class GetScenesLandingRequest
 
     public function toArray(): array
     {
-        $keys = get_class_vars($this);
+        $keys = get_class_vars(self::class);
 
         return array_combine($keys, array_map(fn(string $k) => $this->$k, $keys));
     }

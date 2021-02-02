@@ -96,7 +96,7 @@ class GetSceneSuggestRequest
 
     public function toArray(): array
     {
-        $keys = array_filter(get_class_vars($this), static fn(string $k) => $k !== 'id');
+        $keys = array_filter(get_class_vars(self::class), static fn(string $k) => $k !== 'id');
 
         return array_combine($keys, array_map(fn(string $k) => $this->$k, $keys));
     }
