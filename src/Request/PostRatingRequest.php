@@ -8,7 +8,7 @@ class PostRatingRequest
 {
     /**
      * @var string
-     * @Assert\Choice({"scene", "actor"})
+     * @Assert\Choice(choices={"scene", "actor"}, message="Parameter 'type' must be one of {{ choices }}, '{{ value }}' given.")
      */
     private string $type;
 
@@ -18,8 +18,8 @@ class PostRatingRequest
 
     /**
      * @var int
-     * @Assert\GreaterThanOrEqual(1)
-     * @Assert\LessThanOrEqual(5)
+     * @Assert\GreaterThanOrEqual(1, message="Parameter 'rating' must >= 1.")
+     * @Assert\LessThanOrEqual(5, message="Parameter 'rating' must be <= 5.")
      */
     private int $rating;
 

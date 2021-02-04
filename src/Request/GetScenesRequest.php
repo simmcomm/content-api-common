@@ -21,7 +21,7 @@ class GetScenesRequest
     /**
      * @var int[]
      * @Assert\All({
-     *     @Assert\Type("int")
+     *     @Assert\Type("int", message="Query parameter 'categories' must contain only integer values.")
      * })
      */
     private array $categories = [];
@@ -29,7 +29,7 @@ class GetScenesRequest
     /**
      * @var int[]
      * @Assert\All({
-     *     @Assert\Type("int")
+     *     @Assert\Type("int", message="Query parameter 'categoriesExclude' must contain only integer values.")
      * })
      */
     private array $categoriesExclude = [];
@@ -37,20 +37,20 @@ class GetScenesRequest
     /**
      * @var int[]
      * @Assert\All({
-     *     @Assert\Type("int")
+     *     @Assert\Type("int", message="Query parameter 'actors' must contain only integer values.")
      * })
      */
     private array $actors = [];
 
     /**
      * @var int
-     * @Assert\PositiveOrZero()
+     * @Assert\PositiveOrZero(message="Query parameter 'offset' must be positive or 0.")
      */
     private int $offset = 0;
 
     /**
      * @var int
-     * @Assert\Positive()
+     * @Assert\Positive(message="Query parameter 'limit' must be positive.")
      */
     private int $limit = 25;
 

@@ -17,7 +17,7 @@ class GetScenesLandingRequest
 
     /**
      * @var int
-     * @Assert\Positive()
+     * @Assert\Positive(message="Query parameter 'blockSize' must be positive.")
      */
     private int $blockSize = 25;
 

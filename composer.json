@@ -16,7 +16,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Flowly\\Content\\CommonTest": "tests/"
+            "Flowly\\Content\\CommonTest\\": "tests/"
         }
     },
     "require": {
@@ -24,6 +24,8 @@
     },
     "require-dev": {
         "symfony/validator": "^5.2",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "doctrine/annotations": "^1.11",
+        "doctrine/cache": "^1.10"
     }
 }

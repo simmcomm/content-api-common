@@ -14,7 +14,7 @@ class GetSceneRequest
 
     /**
      * @var string
-     * @Assert\Uuid()
+     * @Assert\Uuid(message="Parameter 'id' must be valid uuid.")
      */
     private string $id;
 

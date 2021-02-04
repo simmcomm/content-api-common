@@ -9,13 +9,13 @@ trait ResolutionTrait
 {
     /**
      * @var int
-     * @Assert\Choice(choices=Constants::VIDEO_RESOLUTIONS)
+     * @Assert\Choice(choices=Constants::VIDEO_RESOLUTIONS, message="Query parameter 'videoResolution' must be one of {{ choices }}, '{{ value }}' given.")
      */
     private int $videoResolution = Constants::VIDEO_RESOLUTIONS[0];
 
     /**
      * @var int
-     * @Assert\Choice(choices=Constants::IMAGE_RESOLUTIONS)
+     * @Assert\Choice(choices=Constants::IMAGE_RESOLUTIONS, message="Query parameter 'imageResolution' must be one of {{ choices }}, '{{ value }}' given.")
      */
     private int $imageResolution = Constants::IMAGE_RESOLUTIONS[0];
 

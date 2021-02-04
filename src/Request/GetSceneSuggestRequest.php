@@ -13,19 +13,19 @@ class GetSceneSuggestRequest
 
     /**
      * @var string
-     * @Assert\Uuid()
+     * @Assert\Uuid(message="Parameter 'id' must be valid uuid.")
      */
     private string $id;
 
     /**
      * @var int
-     * @Assert\PositiveOrZero()
+     * @Assert\PositiveOrZero(message="Query parameter 'minCount' must be positive or 0.")
      */
     private int $minCount = 0;
 
     /**
      * @var int
-     * @Assert\Positive()
+     * @Assert\Positive(message="Query parameter 'limit' must be positive.")
      */
     private int $limit = 25;
 
