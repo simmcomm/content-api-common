@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @author Ivan Pepelko <ivan.pepelko@gmail.com>
+ * @covers       \Flowly\Content\Request\GetSceneSuggestRequest
  */
 class GetSceneSuggestRequestTest extends TestCase
 {
@@ -15,18 +16,17 @@ class GetSceneSuggestRequestTest extends TestCase
 
     private const DEFAULTS = [
         'minCount' => 0,
-        'limit'    => 25,
-        'orderBy'  => 'added',
+        'limit' => 25,
+        'orderBy' => 'added',
         'orderDir' => 'desc',
-        'links'    => false,
+        'links' => false,
     ];
 
     /**
      * @dataProvider provideCases
-     * @covers       \Flowly\Content\Request\GetSceneSuggestRequest
      *
      * @param GetSceneSuggestRequest $request
-     * @param array                  $expected
+     * @param array $expected
      */
     public function testToArray(GetSceneSuggestRequest $request, array $expected): void
     {
@@ -43,4 +43,58 @@ class GetSceneSuggestRequestTest extends TestCase
         $r->setLimit(128);
         yield [$r, array_merge(self::DEFAULTS, ['limit' => $r->getLimit()])];
     }
+
+    public function testGetSetId(): void
+    {
+        $r = new GetSceneSuggestRequest('6e3410f5-f698-488f-87a5-79eba974e756');
+
+        $r->setId('6e3410f5-f698-488f-87a5-79eba974e756');
+
+        self::assertSame('6e3410f5-f698-488f-87a5-79eba974e756', $r->getId());
+    }
+
+    public function testGetSetMinCount(): void
+    {
+        $r = new GetSceneSuggestRequest('6e3410f5-f698-488f-87a5-79eba974e756');
+
+        $r->setMinCount(0);
+
+        self::assertSame(0, $r->getMinCount());
+    }
+
+    public function testGetSetLimit(): void
+    {
+        $r = new GetSceneSuggestRequest('6e3410f5-f698-488f-87a5-79eba974e756');
+
+        $r->setLimit(25);
+
+        self::assertSame(25,$r->getLimit());
+    }
+
+    public function testGetSetOrderBy(): void
+    {
+        $r = new GetSceneSuggestRequest('6e3410f5-f698-488f-87a5-79eba974e756');
+
+        $r ->setOrderBy('added');
+
+        self::assertIsString('added', $r->getOrderBy());
+    }
+
+    public function testGetSetOrderDir(): void
+    {
+        $r = new GetSceneSuggestRequest('6e3410f5-f698-488f-87a5-79eba974e756');
+
+        $r-> setOrderDir('desc');
+
+        self::assertIsString('desc', $r->getOrderDir());
+    }
+
+    public function testIsSetLinks(): void
+    {
+        $r = new GetSceneSuggestRequest('6e3410f5-f698-488f-87a5-79eba974e756');
+        $r -> setLinks('false');
+
+        self::assertIsNotBool('false', $r->isLinks());
+    }
+
 }

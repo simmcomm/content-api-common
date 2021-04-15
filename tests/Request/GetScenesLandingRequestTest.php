@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @author Ivan Pepelko <ivan.pepelko@gmail.com>
+ * @covers       \Flowly\Content\Request\GetScenesLandingRequest
  */
 class GetScenesLandingRequestTest extends TestCase
 {
@@ -23,7 +24,6 @@ class GetScenesLandingRequestTest extends TestCase
 
     /**
      * @dataProvider provideCases
-     * @covers       \Flowly\Content\Request\GetScenesLandingRequest
      *
      * @param GetScenesLandingRequest $request
      * @param array                   $expected
@@ -40,6 +40,15 @@ class GetScenesLandingRequestTest extends TestCase
         $r = new GetScenesLandingRequest();
         $r->setLinks(true);
         yield [$r, array_merge(self::DEFAULTS, ['links' => $r->isLinks()])];
+    }
+
+    public function testGetSetBlockSize(): void
+    {
+        $r = new GetScenesLandingRequest();
+
+        $r->setBlockSize(25);
+
+        self::assertSame(25, $r->getBlockSize());
     }
 
 }
