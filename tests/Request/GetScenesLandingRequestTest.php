@@ -7,19 +7,20 @@ use Generator;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @author Ivan Pepelko <ivan.pepelko@gmail.com>
+ * @author       Ivan Pepelko <ivan.pepelko@gmail.com>
  * @covers       \Flowly\Content\Request\GetScenesLandingRequest
  */
 class GetScenesLandingRequestTest extends TestCase
 {
     private const DEFAULTS = [
-        'blockSize'       => 25,
-        'orderBy'         => 'added',
-        'orderDir'        => 'desc',
-        'links'           => false,
+        'blockSize' => 25,
+        'blacklistedIncluded' => false,
+        'orderBy' => 'added',
+        'orderDir' => 'desc',
+        'links' => false,
         'videoResolution' => 1080,
         'imageResolution' => 1080,
-        'licensor'        => null,
+        'licensor' => null,
     ];
 
     /**
