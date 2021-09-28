@@ -16,24 +16,17 @@ class GetScenesLandingRequest
     use LicensorTrait;
 
     /**
-     * @var int
      * @Assert\Positive(message="Query parameter 'blockSize' must be positive.")
      */
     private int $blockSize = 25;
 
-    /**
-     * @return int
-     */
+    private bool $blacklistedIncluded = false;
+
     public function getBlockSize(): int
     {
         return $this->blockSize;
     }
 
-    /**
-     * @param int $blockSize
-     *
-     * @return GetScenesLandingRequest
-     */
     public function setBlockSize(int $blockSize): GetScenesLandingRequest
     {
         $this->blockSize = $blockSize;
@@ -41,10 +34,20 @@ class GetScenesLandingRequest
         return $this;
     }
 
+    public function isBlacklistedIncluded(): bool
+    {
+        return $this->blacklistedIncluded;
+    }
+
+    public function setBlacklistedIncluded(bool $blacklistedIncluded): void
+    {
+        $this->blacklistedIncluded = $blacklistedIncluded;
+    }
+
     public function toArray(): array
     {
         $keys = array_keys(get_class_vars(self::class));
 
-        return array_combine($keys, array_map(fn(string $k) => $this->$k, $keys));
+        return array_combine($keys, array_map(fn (string $k) => $this->$k, $keys));
     }
 }
