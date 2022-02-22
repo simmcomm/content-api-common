@@ -14,18 +14,19 @@ class GetScenesRequestTest extends TestCase
 {
 
     private const DEFAULTS = [
-        'categories'        => [],
+        'categories' => [],
         'categoriesExclude' => [],
-        'actors'            => [],
-        'offset'            => 0,
-        'limit'             => 25,
-        'rating'            => '>=1.0 <=10.0',
-        'orderBy'           => 'added',
-        'orderDir'          => 'desc',
-        'links'             => false,
-        'videoResolution'   => 1080,
-        'imageResolution'   => 1080,
-        'licensor'          => null,
+        'actors' => [],
+        'offset' => 0,
+        'limit' => 25,
+        'rating' => '>=1.0 <=10.0',
+        'search' => null,
+        'orderBy' => 'added',
+        'orderDir' => 'desc',
+        'links' => false,
+        'videoResolution' => 1080,
+        'imageResolution' => 1080,
+        'licensor' => null,
     ];
 
     /**
