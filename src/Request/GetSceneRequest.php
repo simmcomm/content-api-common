@@ -18,6 +18,11 @@ class GetSceneRequest
      */
     private string $id;
 
+    /**
+     * @var string
+     */
+    private string $search;
+
     public function __construct(string $id) { $this->id = $id; }
 
     /**
@@ -34,6 +39,22 @@ class GetSceneRequest
     public function setId(string $id): void
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSearch(): string
+    {
+        return $this->search;
+    }
+
+    /**
+     * @param string $search
+     */
+    public function setSearch(string $search): void
+    {
+        $this->search = $search;
     }
 
     public function toArray(): array
