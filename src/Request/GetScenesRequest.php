@@ -60,6 +60,11 @@ class GetScenesRequest
     private string $rating = '>=1.0 <=10.0';
 
     /**
+     * @var string|null
+     */
+    private ?string $search;
+
+    /**
      * @return int[]
      */
     public function getCategories(): array
@@ -179,10 +184,26 @@ class GetScenesRequest
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
+    public function getSearch(): ?string
+    {
+        return $this->search;
+    }
+
+    /**
+     * @param string|null $search
+     */
+    public function setSearch(?string $search): void
+    {
+        $this->search = $search;
+    }
+
     public function toArray(): array
     {
         $keys = array_keys(get_class_vars(self::class));
 
-        return array_combine($keys, array_map(fn(string $k) => $this->$k, $keys));
+        return array_combine($keys, array_map(fn (string $k) => $this->$k, $keys));
     }
 }
