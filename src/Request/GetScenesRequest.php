@@ -62,7 +62,7 @@ class GetScenesRequest
     /**
      * @var string|null
      */
-    private ?string $search;
+    private ?string $search = null;
 
     /**
      * @return int[]
