@@ -23,7 +23,7 @@
         "php": "^7.4 | ^8.0"
     },
     "require-dev": {
-        "symfony/validator": "^5.4|^6.0",
+        "symfony/validator": "^5.4",
         "phpunit/phpunit": "^9.5",
         "doctrine/annotations": "^1.11",
         "doctrine/cache": "^1.10"
