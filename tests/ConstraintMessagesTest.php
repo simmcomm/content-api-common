@@ -59,7 +59,7 @@ class ConstraintMessagesTest extends TestCase
         foreach ($violations as $violation) {
             switch ($violation->getPropertyPath()) {
                 case 'blockSize':
-                    self::assertEquals('Query parameter \'blockSize\' must be positive.', $violation->getMessage());
+                    self::assertEquals('Query parameter \'blockSize\' must be in range from 1 to 30.', $violation->getMessage());
                     break;
                 case 'orderBy':
                     self::assertEquals(
