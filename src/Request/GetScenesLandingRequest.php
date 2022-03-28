@@ -16,7 +16,11 @@ class GetScenesLandingRequest
     use LicensorTrait;
 
     /**
-     * @Assert\Positive(message="Query parameter 'blockSize' must be positive.")
+     * @Assert\Range(
+     *     min = 1,
+     *     max = 30,
+     *     notInRangeMessage = "Query parameter 'blockSize' must be in range from {{ min }} to {{ max }}.",
+     * )
      */
     private int $blockSize = 25;
 
