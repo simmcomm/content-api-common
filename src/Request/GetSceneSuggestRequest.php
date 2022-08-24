@@ -4,12 +4,14 @@ namespace Flowly\Content\Request;
 
 use Flowly\Content\Request\Part\LinksTrait;
 use Flowly\Content\Request\Part\OrderTrait;
+use Flowly\Content\Request\Part\ResolutionTrait;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class GetSceneSuggestRequest
 {
     use OrderTrait;
     use LinksTrait;
+    use ResolutionTrait;
 
     /**
      * @var string
