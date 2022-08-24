@@ -20,6 +20,8 @@ class GetSceneSuggestRequestTest extends TestCase
         'orderBy' => 'added',
         'orderDir' => 'desc',
         'links' => false,
+        'videoResolution' => 1080,
+        'imageResolution' => 1080,
     ];
 
     /**
