@@ -21,13 +21,13 @@ class GetScenesRequestTest extends TestCase
         'limit' => 25,
         'rating' => '>=1.0 <=10.0',
         'search' => null,
-        'language' => null,
         'orderBy' => 'added',
         'orderDir' => 'desc',
         'links' => false,
         'videoResolution' => 1080,
         'imageResolution' => 1080,
         'licensor' => null,
+		'language' => null
     ];
 
     /**

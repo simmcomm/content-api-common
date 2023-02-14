@@ -6,6 +6,7 @@ use Flowly\Content\Request\Part\LicensorTrait;
 use Flowly\Content\Request\Part\LinksTrait;
 use Flowly\Content\Request\Part\OrderTrait;
 use Flowly\Content\Request\Part\ResolutionTrait;
+use Flowly\Content\Request\Part\TranslatableTrait;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class GetScenesLandingRequest
@@ -14,6 +15,7 @@ class GetScenesLandingRequest
     use LinksTrait;
     use ResolutionTrait;
     use LicensorTrait;
+    use TranslatableTrait;
 
     /**
      * @Assert\Range(
@@ -25,11 +27,6 @@ class GetScenesLandingRequest
     private int $blockSize = 25;
 
     private bool $blacklistedIncluded = false;
-
-	/**
-	 * @var string|null
-	 */
-	private ?string $language = null;
 
     public function getBlockSize(): int
     {
@@ -52,22 +49,6 @@ class GetScenesLandingRequest
     {
         $this->blacklistedIncluded = $blacklistedIncluded;
     }
-
-	/**
-	 * @return string|null
-	 */
-	public function getLanguage(): ?string
-	{
-		return $this->language;
-	}
-
-	/**
-	 * @param string|null $language
-	 */
-	public function setLanguage(?string $language): void
-	{
-		$this->language = $language;
-	}
 
     public function toArray(): array
     {

@@ -17,12 +17,12 @@ class GetSceneSuggestRequestTest extends TestCase
     private const DEFAULTS = [
         'minCount' => 0,
         'limit' => 25,
-		'language' => null,
         'orderBy' => 'added',
         'orderDir' => 'desc',
         'links' => false,
         'videoResolution' => 1080,
         'imageResolution' => 1080,
+		'language' => null
     ];
 
     /**

@@ -6,6 +6,7 @@ use Flowly\Content\Request\Part\LicensorTrait;
 use Flowly\Content\Request\Part\LinksTrait;
 use Flowly\Content\Request\Part\OrderTrait;
 use Flowly\Content\Request\Part\ResolutionTrait;
+use Flowly\Content\Request\Part\TranslatableTrait;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -17,6 +18,7 @@ class GetScenesRequest
     use LinksTrait;
     use ResolutionTrait;
     use LicensorTrait;
+    use TranslatableTrait;
 
     /**
      * @var int[]
@@ -63,11 +65,6 @@ class GetScenesRequest
      * @var string|null
      */
     private ?string $search = null;
-
-	/**
-	 * @var string|null
-	 */
-	private ?string $language = null;
 
     /**
      * @return int[]
@@ -204,22 +201,6 @@ class GetScenesRequest
     {
         $this->search = $search;
     }
-
-	/**
-	 * @return string|null
-	 */
-	public function getLanguage(): ?string
-	{
-		return $this->language;
-	}
-
-	/**
-	 * @param string|null $language
-	 */
-	public function setLanguage(?string $language): void
-	{
-		$this->language = $language;
-	}
 
     public function toArray(): array
     {
