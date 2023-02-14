@@ -15,13 +15,13 @@ class GetScenesLandingRequestTest extends TestCase
     private const DEFAULTS = [
         'blockSize' => 25,
         'blacklistedIncluded' => false,
+		'language' => null,
         'orderBy' => 'added',
         'orderDir' => 'desc',
         'links' => false,
         'videoResolution' => 1080,
         'imageResolution' => 1080,
-        'licensor' => null,
-		'language' => null
+        'licensor' => null
     ];
 
     /**
