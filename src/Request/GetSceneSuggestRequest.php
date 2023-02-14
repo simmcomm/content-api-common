@@ -33,11 +33,6 @@ class GetSceneSuggestRequest
      */
     private int $limit = 25;
 
-	/**
-	 * @var string|null
-	 */
-	private ?string $language = null;
-
     public function __construct(string $id)
     {
         $this->id = $id;
@@ -102,22 +97,6 @@ class GetSceneSuggestRequest
 
         return $this;
     }
-
-	/**
-	 * @return string|null
-	 */
-	public function getLanguage(): ?string
-	{
-		return $this->language;
-	}
-
-	/**
-	 * @param string|null $language
-	 */
-	public function setLanguage(?string $language): void
-	{
-		$this->language = $language;
-	}
 
     public function toArray(): array
     {
