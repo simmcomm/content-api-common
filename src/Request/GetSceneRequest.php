@@ -18,6 +18,11 @@ class GetSceneRequest
      */
     private string $id;
 
+	/**
+	 * @var string|null
+	 */
+	private ?string $language = null;
+
     public function __construct(string $id) { $this->id = $id; }
 
     /**
@@ -35,6 +40,22 @@ class GetSceneRequest
     {
         $this->id = $id;
     }
+
+	/**
+	 * @return string|null
+	 */
+	public function getLanguage(): ?string
+	{
+		return $this->language;
+	}
+
+	/**
+	 * @param string|null $language
+	 */
+	public function setLanguage(?string $language): void
+	{
+		$this->language = $language;
+	}
 
     public function toArray(): array
     {

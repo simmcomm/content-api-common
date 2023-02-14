@@ -64,6 +64,11 @@ class GetScenesRequest
      */
     private ?string $search = null;
 
+	/**
+	 * @var string|null
+	 */
+	private ?string $language = null;
+
     /**
      * @return int[]
      */
@@ -199,6 +204,22 @@ class GetScenesRequest
     {
         $this->search = $search;
     }
+
+	/**
+	 * @return string|null
+	 */
+	public function getLanguage(): ?string
+	{
+		return $this->language;
+	}
+
+	/**
+	 * @param string|null $language
+	 */
+	public function setLanguage(?string $language): void
+	{
+		$this->language = $language;
+	}
 
     public function toArray(): array
     {

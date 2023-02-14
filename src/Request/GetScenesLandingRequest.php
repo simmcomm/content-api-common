@@ -26,6 +26,11 @@ class GetScenesLandingRequest
 
     private bool $blacklistedIncluded = false;
 
+	/**
+	 * @var string|null
+	 */
+	private ?string $language = null;
+
     public function getBlockSize(): int
     {
         return $this->blockSize;
@@ -47,6 +52,22 @@ class GetScenesLandingRequest
     {
         $this->blacklistedIncluded = $blacklistedIncluded;
     }
+
+	/**
+	 * @return string|null
+	 */
+	public function getLanguage(): ?string
+	{
+		return $this->language;
+	}
+
+	/**
+	 * @param string|null $language
+	 */
+	public function setLanguage(?string $language): void
+	{
+		$this->language = $language;
+	}
 
     public function toArray(): array
     {

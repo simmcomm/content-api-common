@@ -20,6 +20,7 @@ class GetSceneSuggestRequestTest extends TestCase
         'orderBy' => 'added',
         'orderDir' => 'desc',
         'links' => false,
+        'language' => null,
         'videoResolution' => 1080,
         'imageResolution' => 1080,
     ];
@@ -98,5 +99,13 @@ class GetSceneSuggestRequestTest extends TestCase
 
         self::assertIsNotBool('false', $r->isLinks());
     }
+
+	public function testGetSetLanguage(): void
+	{
+		$r = new GetSceneSuggestRequest('6e3410f5-f698-488f-87a5-79eba974e756');
+		$r -> setLinks('de');
+
+		self::assertSame('de', $r->getLanguage());
+	}
 
 }

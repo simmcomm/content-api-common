@@ -21,6 +21,7 @@ class GetScenesRequestTest extends TestCase
         'limit' => 25,
         'rating' => '>=1.0 <=10.0',
         'search' => null,
+        'language' => null,
         'orderBy' => 'added',
         'orderDir' => 'desc',
         'links' => false,
@@ -111,4 +112,11 @@ class GetScenesRequestTest extends TestCase
 
         self::assertNull($r->getLicensor());
     }
+
+	public function testGetSetLanguage(): void
+	{
+		$r = new GetScenesRequest();
+		$r->setLanguage('de');
+		self::assertSame('de', $r->getLanguage());
+	}
 }

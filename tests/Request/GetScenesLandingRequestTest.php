@@ -18,6 +18,7 @@ class GetScenesLandingRequestTest extends TestCase
         'orderBy' => 'added',
         'orderDir' => 'desc',
         'links' => false,
+        'language' => null,
         'videoResolution' => 1080,
         'imageResolution' => 1080,
         'licensor' => null,
@@ -51,5 +52,14 @@ class GetScenesLandingRequestTest extends TestCase
 
         self::assertSame(25, $r->getBlockSize());
     }
+
+	public function testGetSetLanguage(): void
+	{
+		$r = new GetScenesLandingRequest();
+
+		$r->setLanguage('de');
+
+		self::assertSame('de', $r->getLanguage());
+	}
 
 }
