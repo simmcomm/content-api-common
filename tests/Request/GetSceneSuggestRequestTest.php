@@ -103,7 +103,7 @@ class GetSceneSuggestRequestTest extends TestCase
 	public function testGetSetLanguage(): void
 	{
 		$r = new GetSceneSuggestRequest('6e3410f5-f698-488f-87a5-79eba974e756');
-		$r -> setLinks('de');
+		$r -> setLanguage('de');
 
 		self::assertSame('de', $r->getLanguage());
 	}
