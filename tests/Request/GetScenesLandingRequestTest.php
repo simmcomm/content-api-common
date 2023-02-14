@@ -18,10 +18,10 @@ class GetScenesLandingRequestTest extends TestCase
         'orderBy' => 'added',
         'orderDir' => 'desc',
         'links' => false,
-        'language' => null,
         'videoResolution' => 1080,
         'imageResolution' => 1080,
         'licensor' => null,
+		'language' => null
     ];
 
     /**

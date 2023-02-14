@@ -15,9 +15,9 @@ class GetSceneRequestTest extends TestCase
     private const ID = '9fe133b0-daf3-49ab-a1db-dec10d038458';
 
     private const DEFAULTS = [
-		'language' => null,
         'imageResolution' => 1080,
-        'videoResolution' => 1080
+        'videoResolution' => 1080,
+		'language' => null
     ];
 
     /**

@@ -62,6 +62,7 @@ class GetSceneRequest
         return [
             'imageResolution' => $this->getImageResolution(),
             'videoResolution' => $this->getVideoResolution(),
+            'language' => $this->getLanguage()
         ];
     }
 }
