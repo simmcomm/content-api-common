@@ -27,6 +27,7 @@ class GetScenesRequestTest extends TestCase
         'videoResolution' => 1080,
         'imageResolution' => 1080,
         'licensor' => null,
+		'language' => null
     ];
 
     /**
@@ -111,4 +112,11 @@ class GetScenesRequestTest extends TestCase
 
         self::assertNull($r->getLicensor());
     }
+
+	public function testGetSetLanguage(): void
+	{
+		$r = new GetScenesRequest();
+		$r->setLanguage('de');
+		self::assertSame('de', $r->getLanguage());
+	}
 }

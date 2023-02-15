@@ -22,6 +22,7 @@ class GetSceneSuggestRequestTest extends TestCase
         'links' => false,
         'videoResolution' => 1080,
         'imageResolution' => 1080,
+		'language' => null
     ];
 
     /**
@@ -98,5 +99,13 @@ class GetSceneSuggestRequestTest extends TestCase
 
         self::assertIsNotBool('false', $r->isLinks());
     }
+
+	public function testGetSetLanguage(): void
+	{
+		$r = new GetSceneSuggestRequest('6e3410f5-f698-488f-87a5-79eba974e756');
+		$r -> setLanguage('de');
+
+		self::assertSame('de', $r->getLanguage());
+	}
 
 }

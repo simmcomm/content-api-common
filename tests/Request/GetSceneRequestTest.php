@@ -15,9 +15,9 @@ class GetSceneRequestTest extends TestCase
     private const ID = '9fe133b0-daf3-49ab-a1db-dec10d038458';
 
     private const DEFAULTS = [
-
         'imageResolution' => 1080,
-        'videoResolution' => 1080
+        'videoResolution' => 1080,
+		'language' => null
     ];
 
     /**
@@ -67,4 +67,11 @@ class GetSceneRequestTest extends TestCase
 
         self::assertSame(1080, $r->getVideoResolution());
     }
+
+	public function testGetSetLanguage(): void
+	{
+		$r = new GetSceneRequest('9fe133b0-daf3-49ab-a1db-dec10d038458');
+		$r->setLanguage('de');
+		self::assertSame('de', $r->getLanguage());
+	}
 }

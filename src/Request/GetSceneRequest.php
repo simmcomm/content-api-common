@@ -3,6 +3,7 @@
 namespace Flowly\Content\Request;
 
 use Flowly\Content\Request\Part\ResolutionTrait;
+use Flowly\Content\Request\Part\TranslatableTrait;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -11,6 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class GetSceneRequest
 {
     use ResolutionTrait;
+    use TranslatableTrait;
 
     /**
      * @var string
@@ -41,6 +43,7 @@ class GetSceneRequest
         return [
             'imageResolution' => $this->getImageResolution(),
             'videoResolution' => $this->getVideoResolution(),
+            'language' => $this->getLanguage()
         ];
     }
 }

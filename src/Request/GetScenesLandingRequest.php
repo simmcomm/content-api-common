@@ -6,6 +6,7 @@ use Flowly\Content\Request\Part\LicensorTrait;
 use Flowly\Content\Request\Part\LinksTrait;
 use Flowly\Content\Request\Part\OrderTrait;
 use Flowly\Content\Request\Part\ResolutionTrait;
+use Flowly\Content\Request\Part\TranslatableTrait;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class GetScenesLandingRequest
@@ -14,6 +15,7 @@ class GetScenesLandingRequest
     use LinksTrait;
     use ResolutionTrait;
     use LicensorTrait;
+    use TranslatableTrait;
 
     /**
      * @Assert\Range(
