@@ -197,9 +197,11 @@ class GetScenesRequest
     /**
      * @param string|null $search
      */
-    public function setSearch(?string $search): void
+    public function setSearch(?string $search): GetScenesRequest
     {
         $this->search = $search;
+
+        return $this;
     }
 
     public function toArray(): array

@@ -45,9 +45,11 @@ class GetScenesLandingRequest
         return $this->blacklistedIncluded;
     }
 
-    public function setBlacklistedIncluded(bool $blacklistedIncluded): void
+    public function setBlacklistedIncluded(bool $blacklistedIncluded): GetScenesLandingRequest
     {
         $this->blacklistedIncluded = $blacklistedIncluded;
+
+        return $this;
     }
 
     public function toArray(): array
