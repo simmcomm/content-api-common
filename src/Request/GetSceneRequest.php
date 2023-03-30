@@ -33,9 +33,11 @@ class GetSceneRequest
     /**
      * @param string $id
      */
-    public function setId(string $id): void
+    public function setId(string $id): GetSceneRequest
     {
         $this->id = $id;
+
+        return $this;
     }
 
     public function toArray(): array
